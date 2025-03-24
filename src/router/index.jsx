@@ -5,23 +5,21 @@ import Register from '../Pages/Register'
 import Dashboard from '../Pages/Dashboard'
 
 export const router = createBrowserRouter([
-    // {
-    //     element: <DefaultLayout />,
-    //     children: [
-    //         {
-    //             path: "/",
-    //             element: <Dashboard/>
-    //         }
-    //     ],
-    // },
     {
-        path: "login",
-        element: <Login />
+        element: <DefaultLayout />,
+        children: [
+            {
+                path: "login",
+                element: <Login />
+            },
+            {
+                path: "register",
+                element: <Register />
+            },
+        ],
     },
-    {
-        path: "register",
-        element: <Register />
-    },
+
+
     {
         path: "/",
         element: <Dashboard/>
