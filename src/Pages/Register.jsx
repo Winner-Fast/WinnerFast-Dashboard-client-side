@@ -10,10 +10,10 @@ export default function Register() {
 
     async function handleRegistration(data) {
         try {
-            console.log("weeeee",data);
+            // console.log("weeeee",data);
             let response = await axios.post("http://localhost:3000/auth/register", data);
             if (!response) {
-                return toast.error("ops smth went wronf");
+                return toast.error("ops smth went wrong");
             }
             toast.success("You have registered successfully!");
             setTimeout(() => Navigate('/login'), 1000);
@@ -25,7 +25,6 @@ export default function Register() {
                 toast.error(responseData.message[0]) 
             }else{
                 toast.error("Ops try again!");
-
             }
         }
     }
