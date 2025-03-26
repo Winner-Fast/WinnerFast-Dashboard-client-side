@@ -18,7 +18,14 @@ export default function Login() {
             localStorage.setItem("UserToken", response.data.token);
             setTimeout(()=>Navigate('/'), 1000)
         }catch(e){
-            console.log(e);
+            if (e.response && e.response.request.response) {
+                const responseData = JSON.parse(e.response.request.response);
+                console.log(responseData.message); 
+                console.log(responseData.message);
+                toast.error(responseData.message) 
+            }else{
+                toast.error("Ops try again!");
+            }
         }
     }
   return (
