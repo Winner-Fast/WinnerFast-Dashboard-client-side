@@ -12,7 +12,7 @@ export default function ExpensesTable() {
     const [expenseToDelete, setExpenseToDelete] = useState(null)
     const [expenseToUpdate, setExpenseToUpdate] = useState(null)
     const [updateModal, setUpdateModal]= useState(false)
-    const { register, handleSubmit, reset, formState: { errors } } = useForm({ mode: "onChange" })
+    const { register, handleSubmit, reset, formState: {errors}} = useForm({ mode: "onChange" })
     async function AddNewExpense(data) {
         try {
             let results = await axios.post("http://localhost:3000/expenses", data, {
@@ -228,16 +228,10 @@ export default function ExpensesTable() {
                             </span>?
                         </p>
                         <div className="flex justify-between">
-                            <button
-                                onClick={() => setShowDeleteModal(false)}
-                                className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md"
-                            >
+                            <button onClick={() => setShowDeleteModal(false)} className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md">
                                 Cancel
                             </button>
-                            <button
-                                onClick={deleteExpense}
-                                className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"
-                            >
+                            <button onClick={deleteExpense} className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">
                                 Delete
                             </button>
                         </div>
