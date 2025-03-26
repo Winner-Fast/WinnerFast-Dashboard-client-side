@@ -1,19 +1,11 @@
-
-import './App.css'
-import Sidebar from './Components/Layouts/sidebar';
-
+import { RouterProvider } from "react-router-dom"
+import { router } from "./router/index"
 
 function App() {
 
   return (
     <>
-    <div className="App">
-      <div className="AppGlass">
-        <Sidebar/>
-        {/* <MainDash/>
-        <RightSide/> */}
-      </div>
-    </div>  
+      <RouterProvider router={router} />
     </>
   )
 }
