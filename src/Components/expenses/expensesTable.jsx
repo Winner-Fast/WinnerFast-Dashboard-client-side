@@ -36,8 +36,8 @@ export default function ExpensesTable() {
     async function UpdateExpense(data){
         try {
             let results = await axios.put(`http://localhost:3000/expenses/${expenseToUpdate.id}`, data, {
-                headers: {
-                    authorization: `Bearer ${localStorage.getItem('UserToken')}`
+            headers: {
+              authorization: `Bearer ${localStorage.getItem('UserToken')}`
                 }
             })
             console.log("THE RESULTS", results)
@@ -70,8 +70,8 @@ export default function ExpensesTable() {
                     prevExpenses.filter(expense => expense.id !== expenseToDelete.id)
                 );
                 setShowDeleteModal(false);
-                toast.success('Expense deleted successfully');
-            }
+            toast.success('Expense deleted successfully');
+          }
         }catch(e){
             console.log("error in delete",e)
             toast.error('Ops try again')
@@ -88,7 +88,7 @@ export default function ExpensesTable() {
         setUpdateModal(true);
     }
 
-
+      
 
     useEffect(() => {
         async function getExpense() {
