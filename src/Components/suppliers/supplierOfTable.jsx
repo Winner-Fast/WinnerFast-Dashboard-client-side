@@ -11,7 +11,7 @@ export default function SupplierOfTable() {
     const [supplierToUpdate,setsupplierToUpdate]=useState(null)
     const [ModalDelete, setModalDelete]=useState(false)
     const [modalUpdate, setModalUpdate]=useState(false)
-    const { handleSubmit, register, reset, formState: { errors } } = useForm({ mode: "onChange" })
+    const { handleSubmit, register, reset, formState:{errors}} = useForm({ mode: "onChange" })
     useEffect(() => {
         async function getSuppliers() {
             try {
@@ -217,7 +217,7 @@ export default function SupplierOfTable() {
                     </div>
                 </div>
             )}
-                        {ModalDelete && (
+             {ModalDelete && (
                                 <div className="fixed inset-0 flex justify-center items-center">
                                 <div className="w-full max-w-md bg-white shadow-md rounded-lg p-4">
                                     <h1 className="my-4 font-bold text-xl text-center text-gray-800">
